@@ -43,7 +43,7 @@ def scrape():
     facts_soup = BeautifulSoup(html, "html.parser")
     tables = pd.read_html(facts_url)
     mars_facts=tables[0]
-    mars_facts.columns= ["Mars - Earth CompYes arison","Mars","Earth"]
+    mars_facts.columns= ["Mars - Earth Comparison","Mars","Earth"]
     mars_facts.drop(index=mars_facts.index[0], axis=0,inplace=True)
     mars_facts.set_index('Mars - Earth Comparison')
     facts_html=mars_facts.to_html()
