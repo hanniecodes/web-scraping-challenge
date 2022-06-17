@@ -1,25 +1,31 @@
 # Dependencies
+import splinter
+import requests
+import datetime as dt
+import pandas as pd
 from splinter import Browser, browser
 from bs4 import BeautifulSoup
-from webdriver_manager.chrome import ChromeDriverManager
-import pandas as pd
-import requests
+from webdriver_manager.chrome import ChromeDriverManager    
+import time
 
-
-    
+# Define scrape
 def scrape(): 
     mars_data={}
+
+    # Set up splinter
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
+
     # Mars news
     mars_url = 'https://redplanetscience.com/'
     browser.visit(mars_url)
     # Scrape page into Soup
-    html = browser.html
+    html = browser.html   
     mars_soup = BeautifulSoup(html, "html.parser")
     news_title= mars_soup.find_all('div', class_='content_title')[0].text 
     news_date= mars_soup.find_all('div', class_='list_date')[0].text 
     news_par= mars_soup.find_all('div', class_='article_teaser_body')[0].text
+
 
     # Mars Image
     jpl_url = 'https://spaceimages-mars.com/'
@@ -28,6 +34,7 @@ def scrape():
     img_soup = BeautifulSoup(html, "html.parser")
     relative_image_path=img_soup.find_all('img', class_='headerimage fade-in')[0]["src"]
     featured_image_url= (f'{jpl_url}{relative_image_path}')
+ 
 
     # tables
     facts_url = 'https://galaxyfacts-mars.com'
@@ -41,6 +48,7 @@ def scrape():
     mars_facts.set_index('Mars - Earth Comparison')
     facts_html=mars_facts.to_html()
     facts_html.replace('\n','')
+
 
     # hemispheres
     hemi_url = 'https://marshemispheres.com/'
@@ -64,12 +72,12 @@ def scrape():
         hemi_img_urls.append({'title': title, 'img_url': img_url})
 
     mars_data = {
-        "News Title": news_title,
-        "News Paragraph":news_par,
-        "News Date":news_date,
-        "Featured Image URL": featured_image_url, 
-        "Mars Facts":facts_html, 
-        "Mars Hemispheres": hemi_img_urls
+    "Last Modified":dt.datetime.now(),
+    "News Title": news_title,
+    "News Paragraph":news_par,
+    "Featured Image URL": featured_image_url(), 
+    "Mars Facts":facts_html(), 
+    "Mars Hemispheres": hemi_img_urls}
 
-    }
+    browser.quit()
     return mars_data
