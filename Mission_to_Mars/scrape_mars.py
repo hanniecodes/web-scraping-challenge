@@ -22,10 +22,6 @@ def scrape():
     # Scrape page into Soup
     html = browser.html   
     mars_soup = BeautifulSoup(html, "html.parser")
-    # first_title=mars_soup.select_one('div.list_text')
-    # news_title= first_title.find("div", class_='content_title').get_text()
-    # news_date= mars_soup.find_all('div', class_='list_date')[0].text 
-    # news_par= first_title.find('div', class_='article_teaser_body').get_text()
     news_title= mars_soup.find_all('div', class_='content_title')[0].text 
     news_par= mars_soup.find_all('div', class_='article_teaser_body')[0].text
 
