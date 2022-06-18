@@ -22,9 +22,13 @@ def scrape():
     # Scrape page into Soup
     html = browser.html   
     mars_soup = BeautifulSoup(html, "html.parser")
+    # first_title=mars_soup.select_one('div.list_text')
+    # news_title= first_title.find("div", class_='content_title').get_text()
+    # news_date= mars_soup.find_all('div', class_='list_date')[0].text 
+    # news_par= first_title.find('div', class_='article_teaser_body').get_text()
     news_title= mars_soup.find_all('div', class_='content_title')[0].text 
-    news_date= mars_soup.find_all('div', class_='list_date')[0].text 
     news_par= mars_soup.find_all('div', class_='article_teaser_body')[0].text
+
 
 
     # Mars Image
@@ -75,9 +79,10 @@ def scrape():
     "Last Modified":dt.datetime.now(),
     "News Title": news_title,
     "News Paragraph":news_par,
-    "Featured Image URL": featured_image_url(), 
-    "Mars Facts":facts_html(), 
-    "Mars Hemispheres": hemi_img_urls}
+    "Featured Image URL": featured_image_url, 
+    "Mars Facts":facts_html, 
+    "Mars Hemispheres": hemi_img_urls
+    }
 
     browser.quit()
     return mars_data
