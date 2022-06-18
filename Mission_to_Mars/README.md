@@ -35,7 +35,7 @@ Using the [Mars Facts website](https://galaxyfacts-mars.com) and Pandas, I was a
 <br>
 <br>
 <h3><b> Mars Hemispheres </b></h3>
-Using the [astrogeology site](https://marshemispheres.com/), I obtained high-resolution images for each hemisphere of Mars by creating a For loop that captured both the image and the title. I stored them in the img_url and title variables. 
+Using the   [astrogeology site](https://marshemispheres.com/)  , I obtained high-resolution images for each hemisphere of Mars by creating a For loop that captured both the image and the title. I stored them in the img_url and title variables. 
 
 ![image](https://github.com/hanniecodes/web-scraping-challenge/blob/main/Mission_to_Mars/images/hemispheres.jpg?raw=true)
 <br>
@@ -43,5 +43,8 @@ Using the [astrogeology site](https://marshemispheres.com/), I obtained high-res
 <br>
 
 ## MongoDb
+I converted my Jupyter notebook into a Python script called `scrape_mars.py` by using a function called `scrape`. This script scraped all of the data and was stored into a dictionary called mars_data. I connected my MongoDb and created a database mongo database titled `mars_app` and a collection titled `mars_data`.  
 
 ## FlaskAppliication/HTML
+
+I then created a root route `/` that queried my mongo database to pass the data into an HTML template that displayed my data, using a HTML file called `index.html`.
