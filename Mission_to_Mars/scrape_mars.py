@@ -76,12 +76,12 @@ def scrape():
         hemi_img_urls.append({'title': title, 'img_url': img_url})
 
     mars_data = {
-    "Last Modified":dt.datetime.now(),
-    "News Title": news_title,
-    "News Paragraph":news_par,
-    "Featured Image URL": featured_image_url, 
-    "Mars Facts":facts_html, 
-    "Mars Hemispheres": hemi_img_urls
+    "last_mod":dt.datetime.now(),
+    "news_title": news_title,
+    "news_par":news_par,
+    "featured_image_url": featured_image_url, 
+    "mars_facts":facts_html, 
+    "mars_hemi": hemi_img_urls
     }
 
     browser.quit()
