@@ -1,4 +1,4 @@
-# Mission To Mars
+# Mission To Mars:
 <h1>Web-Scraping-Challenge:</h1>
 
 
@@ -56,3 +56,5 @@ I converted my Jupyter notebook into a Python script called `scrape_mars.py` by 
 ## FlaskAppliication/HTML
 
 I then created a root route `/` that queried my mongo database to pass the data into an HTML template that displayed my data, using a HTML file called `index.html`.
+
+![image](https://github.com/hanniecodes/web-scraping-challenge/blob/main/Mission_to_Mars/images/html.jpg?raw=true)
