@@ -8,9 +8,9 @@ The task of this assignment, was to build a web application that scrapes various
 ![image](https://github.com/hanniecodes/web-scraping-challenge/blob/main/Mission_to_Mars/images/scraping_hemispheres%20.jpg?raw=true)  
 
 
-- [JupyterNotebook/Pandas](#Jupyter Notebook/Pandas)
+- [Jupyter Notebook/Pandas](#JupyterNotebook/Pandas)
 - [Scraping](#Scraping)
 - [MongoDb](#MongoDb)
-- [FlaskAppliication/HTML](#Flask Appliication/HTML)
+- [Flask Appliication/HTML](#FlaskAppliication/HTML)
 
 ## Jupyter Notebook/Pandas
