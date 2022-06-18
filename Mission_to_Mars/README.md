@@ -7,10 +7,12 @@ The task of this assignment, was to build a web application that scrapes various
 ![image](https://github.com/hanniecodes/web-scraping-challenge/blob/main/Mission_to_Mars/images/Scraping%20webpage.jpg?raw=true)  
 ![image](https://github.com/hanniecodes/web-scraping-challenge/blob/main/Mission_to_Mars/images/scraping_hemispheres%20.jpg?raw=true)  
 
-
-- [Jupyter Notebook/Pandas](#JupyterNotebook/Pandas)
+There were three parts to this assignment:
 - [Scraping](#Scraping)
 - [MongoDb](#MongoDb)
 - [Flask Appliication/HTML](#FlaskAppliication/HTML)
 
-## Jupyter Notebook/Pandas
+## Scraping
+I completed my initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter. This had four parts: The Latest Mars News, Featured Mars Image, Mars Facts, And the Different Hemispheres. 
+
+
